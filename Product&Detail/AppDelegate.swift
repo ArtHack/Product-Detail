@@ -10,9 +10,12 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
+    let productPresenter = ProductPresenter()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        productPresenter.loadProducts {
+            print("Products loaded in AppDelegate:")
+            print(self.productPresenter.sortedBySku ?? [])
+        }
         // Override point for customization after application launch.
         return true
     }

@@ -7,8 +7,15 @@
 
 import Foundation
 
-struct ProductModel {
+/// Model for Domain Layer
+struct Product {
     let amount: Double
     let currency: String
     let sku: String
+}
+
+/// Model for UI Layer
+struct ProductViewModel {
+    let sku: String
+    let count: String
 }

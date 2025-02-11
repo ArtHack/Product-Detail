@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Model for Data Layre
 struct Transaction: Decodable {
     let amount: String
     let currency: String
