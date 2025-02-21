@@ -9,6 +9,6 @@ import Foundation
 
 struct Rate: Codable {
     let from: String
-    let rate: String
+    let rate: Double
     let to: String
 }

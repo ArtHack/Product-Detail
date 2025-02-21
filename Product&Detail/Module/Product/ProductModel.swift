@@ -13,9 +13,3 @@ struct Product {
     let currency: String
     let sku: String
 }
-
-/// Model for UI Layer
-struct ProductViewModel {
-    let sku: String
-    let count: String
-}

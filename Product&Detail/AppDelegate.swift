@@ -9,14 +9,18 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    var window: UIWindow?
 
-    let productPresenter = ProductPresenter()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        productPresenter.loadProducts {
-            print("Products loaded in AppDelegate:")
-            print(self.productPresenter.sortedBySku ?? [])
-        }
-        // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.main.bounds)
+//        let productListViewController = ProductFactory().make()
+//        let navController = UINavigationController(rootViewController: productListViewController)
+//        window?.rootViewController = navController
+//        window?.makeKeyAndVisible()
+//        
+//        DataManager.shared.loadDataOnce {
+//            print("📌 Data loaded successfully when the application started!")
+//        }
         return true
     }
 

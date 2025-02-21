@@ -13,12 +13,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        
+        let productModule = ProductFactory().make()
+        let navigation = UINavigationController(
+            rootViewController: productModule
+        )
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = ProductViewController()
+        window.rootViewController = navigation
         self.window = window
         window.makeKeyAndVisible()
+        
+        DataManager.shared.loadDataOnce {
+            print("📌 Data loaded successfully when the application started!")
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
